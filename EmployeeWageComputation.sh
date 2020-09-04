@@ -1,10 +1,13 @@
 #!/bin/bash -x
 
-IS_PRESENT=1
+WAGE_PER_HRS=20
+IS_FULL_TIME=1
 empCheck=$((RANDOM%2))
-if [ $IS_PRESENT -eq $empCheck ]
+if [ $IS_FULL_TIME -eq $empCheck ]
 then
-       echo Employee is present
+       empHrs=8
 else
-       echo Employee is absent
+       empHrs=0
 fi
+dailyWage=$(( $empHrs * $WAGE_PER_HRS ))
+echo $dailyWage
